@@ -1,0 +1,57 @@
+[
+{
+    "model": "Cremeria_Toscano_1.clientes",
+    "pk": "0001",
+    "fields": {
+        "idruta": "0001",
+        "nombrecliente": "Jodie Elizabeth",
+        "direccioncliente": "Guerrero #27",
+        "telefonocliente": "3410001452",
+        "adeudos": 0.0
+    }
+},
+{
+    "model": "Cremeria_Toscano_1.clientes",
+    "pk": "0002",
+    "fields": {
+        "idruta": "0002",
+        "nombrecliente": "Juan Pascual",
+        "direccioncliente": "Hidalgo #5",
+        "telefonocliente": "3415687456",
+        "adeudos": 10.0
+    }
+},
+{
+    "model": "Cremeria_Toscano_1.clientes",
+    "pk": "0003",
+    "fields": {
+        "idruta": "0003",
+        "nombrecliente": "Kevin Jimenez",
+        "direccioncliente": "Morelos #500",
+        "telefonocliente": "3415984236",
+        "adeudos": 10000.0
+    }
+},
+{
+    "model": "Cremeria_Toscano_1.clientes",
+    "pk": "0004",
+    "fields": {
+        "idruta": "0004",
+        "nombrecliente": "Mago Lopez",
+        "direccioncliente": "Independencia #5",
+        "telefonocliente": "3414584845",
+        "adeudos": 0.0
+    }
+},
+{
+    "model": "Cremeria_Toscano_1.clientes",
+    "pk": "0005",
+    "fields": {
+        "idruta": "0001",
+        "nombrecliente": "Juan Perez",
+        "direccioncliente": "Enrique Segoviano",
+        "telefonocliente": "465132",
+        "adeudos": 0.0
+    }
+}
+]

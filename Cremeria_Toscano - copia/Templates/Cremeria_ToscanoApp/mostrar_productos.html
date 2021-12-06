@@ -1,0 +1,58 @@
+{% extends 'Cremeria_ToscanoApp/index.html' %}
+{% block titulo %}Productos{% endblock titulo %}
+
+{% block formulario %}
+    <div class="acciones">
+        <div class="consultar">
+            <form method="POST">{% csrf_token %}
+                <input type="text", class="texto" name="consulta" placeholder="Buscar Producto">
+                <button type="submit" class="boton_buscar">Buscar</button>
+            </form>
+        </div>
+        {% if perms.Cremeria_Toscano_1.add_productos %}
+        <div class="boton">
+            <a class="boton_agregar" href="{% url 'Cremeria_Toscano_1:agregarproducto' %}">Agregar +</a>
+        </div>
+        {% endif %}
+    </div>
+    {% if productos %}
+        <div class="dtabla">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>IdProducto</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Fecha de Caducidad</th>
+                        {% if perms.Cremeria_Toscano_1.delete_productos %}
+                        <th></th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for Productos in productos %}
+                        <tr>
+                            <td>
+                            {% if perms.Cremeria_Toscano_1.change_productos %}
+                                <a href="{% url 'Cremeria_Toscano_1:modificarproducto' Productos.idproducto %}">{{ Productos.idproducto }}</a>
+                            {% else %}
+                                {{ Productos.idproducto }}
+                            {% endif %}
+                            </td>
+                            <td>{{ Productos.nombreproducto }}</td>
+                            <td>{{ Productos.cantidadp }}</td>
+                            <td>${{ Productos.precio}}</td>
+                            <td>{{ Productos.fechacaducidad }}</td>
+                            {% if perms.Cremeria_Toscano_1.delete_productos %}
+                            <td><a href="{% url 'Cremeria_Toscano_1:eliminarproducto' Productos.idproducto %}">Eliminar</a></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <h2>No existen Productos registrados</h2>
+    {% endif %}
+{% endblock formulario %}

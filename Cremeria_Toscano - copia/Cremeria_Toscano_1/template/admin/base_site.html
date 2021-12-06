@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %} 
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') 
+}}{% endblock %} 
+{% load static %} 
+{% block branding %} 
+    <img src='{% static "img/logo.png" %}' alt="logo"> 
+    <p>DB Cremeria_Toscano</p> 
+{% endblock %} 
+{% block nav-global %}{% endblock %}
